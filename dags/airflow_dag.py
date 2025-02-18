@@ -2,12 +2,14 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 import etl_pipeline
+import upload_to_s3
+import os
 
 def run_etl():
     etl_pipeline.clean_data("data/raw_data.csv", "data/cleaned_data.csv")
 
 def upload_cleaned_data():
-    os.system("python upload_to_s3.py")
+    upload_to_s3.upload_to_s3("data/cleaned_data.csv", "your-s3-bucket-name")
 
 def load_into_snowflake():
     """Placeholder for Snowflake loading step."""
