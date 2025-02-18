@@ -1,0 +1,17 @@
+# Core dependencies
+pandas
+boto3
+pyarrow
+snowflake-connector-python
+
+# Apache Airflow dependencies
+airflow
+airflow[postgres]
+airflow[s3]
+airflow[snowflake]
+airflow[crypto]
+
+# Additional utilities
+requests
+sqlalchemy
+psycopg2-binary
