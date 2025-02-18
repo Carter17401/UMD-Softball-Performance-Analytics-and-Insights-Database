@@ -53,7 +53,9 @@ This project builds an **ETL pipeline** to extract, transform, and load **25 yea
    pip install -r requirements.txt
    ```  
 
-3. Set up AWS credentials for S3 access.  
+3. Set up AWS and Snowflake credentials:  
+   - Configure your AWS credentials (`~/.aws/credentials` or environment variables) for S3 access.  
+   - Update Snowflake connection details (account, user, password, warehouse, and database) in the ETL scripts.  
 
 4. Execute the pipeline:  
    - Run `scripts/convert_to_csv.py` to preprocess data.  
